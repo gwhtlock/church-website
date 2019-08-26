@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="helpers/fragments :: head"></head>
+<body>
+    <nav th:replace="helpers/fragments :: navigation"></nav>
+
+
+    <form method="post" style="max-width:600px;" th:object="${user}">
+        <div class="form-group">
+            <label th:for="firstName">First Name</label>
+            <input class="form-control" th:field="*{firstName}" />
+<!--            <span th:errors="*{name}" class="error"></span>-->
+        </div>
+
+        <div class="form-group">
+            <label th:for="lastName">Last Name</label>
+            <input class="form-control" th:field="*{lastName}" />
+            <!--            <span th:errors="*{name}" class="error"></span>-->
+        </div>
+
+        <div class="form-group">
+            <label th:for="userName">User Name</label>
+            <input class="form-control" th:field="*{userName}" />
+            <!--            <span th:errors="*{name}" class="error"></span>-->
+        </div>
+
+        <div class="form-group">
+            <label th:for="password">Password</label>
+            <input class="form-control" th:field="*{password}" />
+            <!--            <span th:errors="*{name}" class="error"></span>-->
+        </div>
+
+
+        <input type="submit" value="Add User" />
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="helpers/fragments :: head"></head>
+<body>
+    <nav th:replace="helpers/fragments :: navigation"></nav>
+
+    <p th:unless="${users} and ${users.size()}">no Users :(</p>
+
+
+    <table class="table">
+
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>User Name</th>
+            <th>Password</th>
+        </tr>
+
+        <tr th:each="user : ${users}">
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.userName}"></td>
+            <td th:text="${user.password}"></td>
+        </tr>
+
+    </table>
+
+
+</body>
+</html>
